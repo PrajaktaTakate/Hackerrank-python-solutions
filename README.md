@@ -1,1 +1,1 @@
-# Hackerrank-python-solutions
+# Hackerrank-python-solutions Effective solutions for HackerRank Python
