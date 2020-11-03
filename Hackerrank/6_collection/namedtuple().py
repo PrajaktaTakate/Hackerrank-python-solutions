@@ -1,4 +1,4 @@
-"""input
+"""
 5
 ID         MARKS      NAME       CLASS
 1          97         Raymond    7
@@ -7,24 +7,11 @@ ID         MARKS      NAME       CLASS
 4          72         Stewart    5
 5          80         Peter      6
 
-Print the average marks of the list corrected to 2 decimal places.
+output
 78.00
-
 """
 
 import collections
-n=int(input())
-col = ",".join(input().split())
-student = collections.namedtuple('student',col)
-stud=[]
-for _ in range(n):
-    col1,col2,col3,col4=input().split()
-    #print(col1)
-    stud.append(student(col1,col2,col3,col4))
-
-avg=0
-total=0
-
-print(sum(map(int,map(lambda x: x.MARKS,stud))))
-print('{0:.2f}'.format(sum(map(int,[x.MARKS for x in stud]))/n))
-
+n, Score = int(input()) , collections.namedtuple('Score',input().split())
+scores = [Score(*input().split()).MARKS for i in range(n)]
+print("%.2f"% (sum(map(int,scores))/n))
